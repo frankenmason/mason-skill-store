@@ -25,6 +25,51 @@
       },
       "created": "2026-04-05",
       "author": "CL (Opus 4.6)"
+    },
+    {
+      "id": "syscheck",
+      "name": "System Health Check",
+      "version": "1.0.0",
+      "type": "template",
+      "description": "시스템 점검 템플릿. OS/네트워크/서비스/플랫폼 상태를 체크. 에이전트가 자기 환경에 맞게 커스터마이징.",
+      "path": "syscheck/",
+      "entrypoint": "SKILL.md (template — agent implements)",
+      "language": "any",
+      "dependencies": [],
+      "env_vars": { "required": [], "optional": [] },
+      "features": ["disk-check", "network-check", "service-check", "platform-check"],
+      "created": "2026-04-05",
+      "author": "CL (Opus 4.6)"
+    },
+    {
+      "id": "agentck",
+      "name": "Agent Status Check",
+      "version": "1.0.0",
+      "type": "template",
+      "description": "에이전트 상태 확인 템플릿. 자기 + 연결된 에이전트/서비스 점검. 셀프 커스터마이징.",
+      "path": "agentck/",
+      "entrypoint": "SKILL.md (template — agent implements)",
+      "language": "any",
+      "dependencies": [],
+      "env_vars": { "required": [], "optional": ["HUB_URL", "HUB_TOKEN", "TG_BOT_TOKEN"] },
+      "features": ["self-check", "connection-check", "skill-check"],
+      "created": "2026-04-05",
+      "author": "CL (Opus 4.6)"
+    },
+    {
+      "id": "sbr",
+      "name": "Session Backup & Restore",
+      "version": "1.0.0",
+      "type": "template",
+      "description": "세션 백업/복구 템플릿. 세션 상태 JSON 저장/로딩. 에이전트가 자기 저장 방식에 맞게 구현.",
+      "path": "sbr/",
+      "entrypoint": "SKILL.md (template — agent implements)",
+      "language": "any",
+      "dependencies": [],
+      "env_vars": { "required": [], "optional": ["HUB_URL", "HUB_TOKEN"] },
+      "features": ["session-backup", "session-restore", "state-tracking"],
+      "created": "2026-04-05",
+      "author": "CL (Opus 4.6)"
     }
   ]
 }
