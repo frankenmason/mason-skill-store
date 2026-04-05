@@ -1,0 +1,30 @@
+{
+  "$schema": "mason-skill-store/catalog/v1",
+  "description": "Mason AI Skill Store — available skills for agents and external customers",
+  "updated": "2026-04-05",
+  "skills": [
+    {
+      "id": "kgmda-trade-agent",
+      "name": "KGMDA Golf Membership Price Checker",
+      "version": "1.1.0",
+      "description": "kgmda.com 골프회원권 매도/매수 시세 자동 조회. READ-ONLY.",
+      "path": "kgmda-trade-agent/",
+      "entrypoint": "kgmda_scraper.py",
+      "preflight": "preflight.py",
+      "language": "python",
+      "python_min": "3.9",
+      "dependencies": ["playwright", "curl"],
+      "env_vars": {
+        "required": ["KGMDA_ID", "KGMDA_PW"],
+        "optional": ["TG_BOT_TOKEN", "TG_CHAT_ID", "KGMDA_PROXY", "KGMDA_SCREENSHOT_DIR"]
+      },
+      "features": ["search", "parse", "tg-report", "screenshot", "proxy-support"],
+      "constraints": {
+        "ip": "Korean IP required (or SOCKS5 proxy via KGMDA_PROXY)",
+        "safety": "HC-KGMDA: READ-ONLY only. No write/delete."
+      },
+      "created": "2026-04-05",
+      "author": "CL (Opus 4.6)"
+    }
+  ]
+}
